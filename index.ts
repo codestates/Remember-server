@@ -8,11 +8,11 @@ import "reflect-metadata";
 import { createConnection } from "typeorm";
 
 //라우터
-import loginRouter from "./src/routes/login";
-import loginGithubRouter from "./src/routes/loginGithub";
-import loginGoogleRouter from "./src/routes/loginGoogle";
-import signUpRouter from "./src/routes/signUp";
-import mypageRouter from "./src/routes/mypage";
+// import loginRouter from "./src/routes/login";
+// import loginGithubRouter from "./src/routes/loginGithub";
+// import loginGoogleRouter from "./src/routes/loginGoogle";
+// import signUpRouter from "./src/routes/signUp";
+// import mypageRouter from "./src/routes/mypage";
 
 //db 연결
 createConnection()
@@ -44,13 +44,14 @@ app.use(
     credentials: true,
   })
 );
-
+const mainController = require("./src/controllers");
 //라우터
-app.use("/login", loginRouter);
-app.use("/github-login", loginGithubRouter);
-app.use("/google-login", loginGoogleRouter);
-app.use("/signup", signUpRouter);
-app.use("/mypage", mypageRouter);
+// app.use("/login", loginRouter);
+// app.use("/github-login", loginGithubRouter);
+// app.use("/google-login", loginGoogleRouter);
+// app.use("/signup", signUpRouter);
+// app.use("/mypage", mypageRouter);
+app.post("/login", mainController.loginController);
 
 app.get("/", (req: Request, res: Response) => {
   res.status(201).send("hello remember~");
