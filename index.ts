@@ -44,14 +44,18 @@ app.use(
     credentials: true,
   })
 );
-const mainController = require("./src/controllers");
+
+import loginController from "./src/controllers/loginController";
+// import loginGithubController from "./src/controllers/loginGithubController";
+
 //라우터
 // app.use("/login", loginRouter);
 // app.use("/github-login", loginGithubRouter);
 // app.use("/google-login", loginGoogleRouter);
 // app.use("/signup", signUpRouter);
 // app.use("/mypage", mypageRouter);
-app.post("/login", mainController.loginController);
+
+app.post("/login", loginController.loginController);
 
 app.get("/", (req: Request, res: Response) => {
   res.status(201).send("hello remember~");

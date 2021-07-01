@@ -4,7 +4,7 @@ const refreshSecret = process.env.REFRESH_SECRET;
 import { Request, Response } from "express";
 import users from "../entity/users";
 
-module.exports = {
+const loginController = {
   loginController: async (req: Request, res: Response) => {
     const { email, password } = req.body;
     const userInfo = await users.findOne({
@@ -48,3 +48,4 @@ module.exports = {
     }
   },
 };
+export default loginController;
