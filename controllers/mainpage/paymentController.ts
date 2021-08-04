@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { Donors } from "../models/Donors";
+import { Donors } from "../../models/Donors";
 
 const paymentController = {
   paymentController: async (req: Request, res: Response) => {

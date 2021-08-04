@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { MainPosts } from "../models/MainPosts";
-import { Donors } from "../models/Donors";
+import { MainPosts } from "../../models/MainPosts";
+import { Donors } from "../../models/Donors";
 
 const mainpageController = {
   mainpageController: async (req: Request, res: Response) => {

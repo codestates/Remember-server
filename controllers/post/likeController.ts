@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { Likes } from "../models/Likes";
+import { Likes } from "../../models/Likes";
 
 const likeController = {
   putLikeController: async (req: Request, res: Response) => {

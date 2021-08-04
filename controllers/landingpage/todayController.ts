@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { Todays } from "../models/Todays";
+import { Todays } from "../../models/Todays";
 
 const todayController = {
   todayController: async (req: Request, res: Response) => {

@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { Users } from "../models/Users";
+import { Users } from "../../models/Users";
 
 const withdrawController = {
   withdrawController: async (req: Request, res: Response) => {

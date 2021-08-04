@@ -1,9 +1,5 @@
 import { Request, Response } from "express";
-import { Comments } from "../models/Comments";
-import { Users } from "../models/Users";
-import { MainPosts } from "../models/MainPosts";
-import { create } from "domain";
-import { url } from "inspector";
+import { Comments } from "../../models/Comments";
 
 const commentController = {
   commentController: async (req: Request, res: Response) => {
