@@ -1,6 +1,6 @@
 //오아스로 로그인 할 때 정보들 테이블에 정보
 import { Request, Response } from "express";
-import { Users } from "../models/Users";
+import { Users } from "../../models/Users";
 const OAuthInfoController = {
   OAuthInfoController: async (req: Request, res: Response) => {
     console.log(req.body);

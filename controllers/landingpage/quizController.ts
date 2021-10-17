@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { Quizzes } from "../models/Quizzes";
+import { Quizzes } from "../../models/Quizzes";
 
 const quizController = {
   quizController: async (req: Request, res: Response) => {

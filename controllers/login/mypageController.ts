@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { Users } from "../models/Users";
-import { Donors } from "../models/Donors";
+import { Users } from "../../models/Users";
+import { Donors } from "../../models/Donors";
 const jwt = require("jsonwebtoken");
 const accessSecret = process.env.ACCESS_SECRET;
 

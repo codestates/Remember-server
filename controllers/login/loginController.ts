@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { Users } from "../models/Users";
+import { Users } from "../../models/Users";
 require("dotenv").config();
 const jwt = require("jsonwebtoken");
 const accessSecret = process.env.ACCESS_SECRET;

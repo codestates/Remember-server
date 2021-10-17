@@ -1,20 +1,15 @@
 import express from "express";
 import cors from "cors";
 import "dotenv/config";
-//controller 불러오기
-import loginController from "./controllers/loginController";
-import signupController from "./controllers/signupController";
-import OAuthInfoController from "./controllers/OAuthInfoController";
-import mypageController from "./controllers/mypageController";
-import updateUserController from "./controllers/updateUserController";
-import withdrawController from "./controllers/withdrawController";
-import mainpageController from "./controllers/mainpageController";
-import commentController from "./controllers/commentController";
-import likeController from "./controllers/likeController";
-import quizController from "./controllers/quizController";
-import todayController from "./controllers/todayController";
-import nodemailerController from "./controllers/nodemailerController";
-import paymentController from "./controllers/paymentController";
+
+// route 적용
+import landingpageRouter from "./routes/landingpage";
+import loginRouter from "./routes/login";
+import mailRouter from "./routes/mail";
+import mainpageRouter from "./routes/mainpage";
+import postRouter from "./routes/post";
+import userInfoRouter from "./routes/userInfo";
+import withdrawRouter from "./routes/withdraw";
 
 const bodyParser = require("body-parser");
 
@@ -55,26 +50,14 @@ app.options(
   cors(corsOption)
 );
 
-// Controller 적용
-app.post("/login", loginController.loginController);
-app.post("/signup", signupController.signupController);
-app.post("/oauth-info", OAuthInfoController.OAuthInfoController); //api 추가하기
-app.get("/mypage", mypageController.getMypageController); //Mypage 일반 로그인
-app.post("/mypage", mypageController.postMypageController); // Mypage 소셜 로그인
-app.put("/update-user", updateUserController.updateUserController);
-app.post("/withdraw", withdrawController.withdrawController);
-app.get("/mainpage", mainpageController.mainpageController);
-app.post("/mainpage", mainpageController.mainpageDonationController);
-app.get("/mainpage/:id", mainpageController.mainpageSingleController);
-app.post("/comment", commentController.commentController);
-app.get("/comment-list", commentController.commentListController);
-app.put("/put-like", likeController.putLikeController);
-app.post("/post-like", likeController.postLikeController);
-app.get("/quiz", quizController.quizController);
-app.post("/today", todayController.todayController);
-app.post("/mail", nodemailerController.sendAuthController);
-app.post("/mailreceipt", nodemailerController.sendreceiptController);
-app.post("/payment", paymentController.paymentController);
+// route 적용
+app.use("/", landingpageRouter);
+app.use("/", loginRouter);
+app.use("/", mailRouter);
+app.use("/", mainpageRouter);
+app.use("/", postRouter);
+app.use("/", userInfoRouter);
+app.use("/", withdrawRouter);
 
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
